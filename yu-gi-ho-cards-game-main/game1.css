@@ -1,0 +1,260 @@
+@font-face {
+    font-family: "Creepy";
+    src: url("Assets/Fonts/Creepy.woff") format("woff"), url("Assets/Fonts/Creepy.woff2") format("wof2")
+}
+
+@font-face {
+    font-family: "Lunacy";
+    src: url("Assets/Fonts/Lunacy.woff") format("woff"), url("Assets/Fonts/Lunacy.woff2") format("wof2")
+}
+
+* {
+    /* define the full width size, no matter what! */
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+    /*fix the color of the redial gredient and spread the color on all the screen */
+    cursor: url("Assets/Cursors/Ghost.cur"), auto;
+}
+
+body {
+    margin: 0;
+    /* mix between 2 colors */
+    background: radial-gradient(DarkBlue, Aquamarine);
+}
+
+.page-title {
+    color: #FF6D00;
+    font-family: Creepy, fantasy, serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+}
+
+.game-info-container {
+    /* define that the info will take the first row alone */
+    grid-column: 1 / -1;
+    /* text of time and text of flips definition side by side */
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info {
+    font-family: Lunacy, fantasy, serif;
+    color: #ffbb89;
+    font-size: 4em;
+}
+
+.game-container {
+    /* setting cards as grid with rows and columus and repeat 4 in a row */
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    /* define the space size between each card */
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+    perspective: 500px;
+}
+
+.card :hover {
+    cursor: url("Assets/Cursors/GhostHover.cur"), auto;
+}
+
+.card {
+    position: relative;
+    height: 175px;
+    width: 125px;
+}
+
+
+/*.card:hover {
+    cursor: url("cursor-hand.jpg");
+}*/
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width: 2px;
+    /*border-width: 4px;   use only with transform: translate: ;*/
+    border-style: solid;
+    transition: transform 500ms ease-in-out;
+    /* define the times flip animation */
+}
+
+.card-back {
+    background-color: black;
+    border-color: darksalmon;
+}
+
+.card-front {
+    background-color: rgb(6, 121, 228);
+    border-color: darkgrey;
+    transform: rotateY(180deg);
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card-back:hover {
+    transition: transform 100ms ease-in-out;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+    width: 105%;
+    height: 105%;
+}
+
+.card.visible .card-front {
+    transform: rotateY(0)
+}
+
+.card.matched .card-front {
+    /* define the time the card will dance when we have a match */
+    animation: dance 1s linear infinite 500ms;
+    animation-iteration-count: 7;
+}
+
+
+/* click to start text */
+
+.overlay-text {
+    display: none;
+    /* The position stay on the same locattion when the user scroll down  */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #FF6D00;
+    font-family: Creepy, fantasy, serif;
+}
+
+.victory-text {
+    /*use for victory display*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: gold;
+    font-family: Creepy, fantasy, serif;
+}
+
+.overlay-text-small {
+    /* use for click to restart text after game over */
+    font-size: .3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    /* text on top of each over instead of side by side */
+    animation: overlay-grow 500ms forwards;
+}
+
+
+/*.victory-text {
+    /*use for victory display
+    display: flex;
+    flex-direction: column;
+    /* animation: overlay-grow 500ms forwards;
+    animation: overlay-grow-2 2s linear infinite 500ms;
+}*/
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 10em;
+    }
+}
+
+@keyframes overlay-grow-2 {
+    /*use for victory display*/
+    0%,
+    100% {
+        background-color: rgba(0, 0, 0, .9);
+        font-size: 10em;
+    }
+    25% {
+        background-color: rgba(0, 0, 0, .9);
+        font-size: 5em;
+    }
+    75% {
+        background-color: rgba(0, 0, 0, .9);
+        font-size: 7.5em;
+    }
+}
+
+
+/* dance when we having a match */
+
+@keyframes dance {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+.yu-gi-ho-back {
+    position: absolute;
+    width: 125px;
+    height: 175px;
+    align-self: flex-start;
+    /*transform: translateY(-15px);*/
+    transition: transform 100ms ease-in-out;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-value {
+    transition: transform 100ms ease-in-out;
+    transform: scale(1);
+    width: 125px;
+    height: 175px;
+}
+
+.card-front:hover .card-value {
+    transform: scale(1.1);
+}
+
+.card-face:hover .yu-gi-ho-back {
+    /* transform: translateY(-4px);*/
+    width: 135px;
+    height: 190px;
+}
+
+@media (max-width: 600px) {
+    /* transform cards when resizing*/
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+    /* transform text when resizing*/
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

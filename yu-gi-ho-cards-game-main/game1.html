@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="game1.css" rel="stylesheet">
+    <script src="script.js" async></script>
+    <!-- async load the js file at the same time of html file -->
+    <title>Mix-Or-Match</title>
+</head>
+
+<body>
+    <h1 class="page-title">Mix-Or-Match</h1>
+    <div class="overlay-text visible">
+        Click to start
+    </div>
+
+    <div id="game-over-text" class="overlay-text ">
+        GAME OVER
+        <span class="overlay-text-small">
+            Click to restart
+        </span>
+    </div>
+
+    <div id="victory-text" class="overlay-text">
+        VICTORY
+        <span class="overlay-text-small">
+            Click to restart
+        </span>
+    </div>
+
+
+    <!-- this div contain all the cards -->
+    <div class="game-container">
+
+        <!-- contain game information like time and flip count -->
+        <div class="game-info-container">
+
+            <div class="game-info">
+                Time <span id="time-remaining">100</span>
+            </div>
+            <div class="game-info">
+                Flips <span id="flips">0</span>
+            </div>
+        </div>
+
+
+        <!-- card 1 A -->
+        <div class="card">
+            <div class="card-back card-face">
+
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\dark-magician-front.png">
+            </div>
+        </div>
+
+        <!-- card 1 B -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\dark-magician-front.png">
+            </div>
+        </div>
+
+        <!-- card 2 A -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\neos-front-2.jpg">
+            </div>
+        </div>
+
+        <!-- card 2 B -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\neos-front-2.jpg">
+            </div>
+        </div>
+
+        <!-- card 3 A -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\polmarization-front-3.jpg">
+            </div>
+        </div>
+
+        <!-- card 3 B -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\polmarization-front-3.jpg">
+            </div>
+        </div>
+
+        <!-- card 4 A -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\cosmic-front-4.jpg">
+            </div>
+        </div>
+
+        <!-- card 4 B -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face">
+                <img class="card-value" src="Assets\pictures\cosmic-front-4.jpg">
+            </div>
+        </div>
+
+        <!-- card 5 A -->
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="yu-gi-ho-back" src="Assets\pictures\yu-gi-ho-back.png">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\drowing-front-5.jpg">
+            </div>
+        </div>
+
+        <!-- card 5 B -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\drowing-front-5.jpg ">
+            </div>
+        </div>
+
+        <!-- card 6 A -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\rainbow-front-6.jpg ">
+            </div>
+        </div>
+
+        <!-- card 6 B -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\rainbow-front-6.jpg ">
+            </div>
+        </div>
+
+        <!-- card 7 A -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\red_eyes-front-7.png ">
+            </div>
+        </div>
+
+        <!-- card 7 B -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\red_eyes-front-7.png ">
+            </div>
+        </div>
+
+        <!-- card 8 A -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src="Assets\pictures\vision_hero-front-8.jpg ">
+            </div>
+        </div>
+
+        <!-- card 8 B -->
+        <div class="card ">
+            <div class="card-back card-face ">
+                <img class="yu-gi-ho-back " src="Assets\pictures\yu-gi-ho-back.png ">
+            </div>
+
+            <div class="card-front card-face ">
+                <img class="card-value " src=" Assets\pictures\vision_hero-front-8.jpg ">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+
+
+
+
+
+</html>
