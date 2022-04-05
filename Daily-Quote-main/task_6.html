@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <style>
+        div {
+            margin: 0 auto;
+            text-align: center
+        }
+        
+        figure {
+            display: inline-block;
+            width: 250px;
+            height: 300px;
+            padding: 5px;
+            padding: 15px;
+            background: lightblue;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .button {
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            margin-left: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .button2 {
+            /* blue */
+            background-color: #008CBA;
+        }
+        
+        .button2:hover {
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<body onload="randomQuote()">
+
+    <div>
+        <figure>
+            <h3>The Daily Quote: </h3>
+            <br> <br>
+            <p id="quoteArray">0</p>
+        </figure> <br>
+
+    </div>
+    <button class="button button2 fas fa-dice " onclick="randomQuote()">  הגרל ציטוט </button>
+    <button class="button button2 fas fa-plus " onclick="userQuote()"> הוסף ציטוט למערך </button>
+    <button class="button button2 fas fa-minus" onclick=" deleteQuote()"> מחק ציטוט</button>
+    <button class=" button button2 fas fa-print" onclick="printPage()"> הדפס את הדף </button>
+    <br> <br>
+
+    <script src="script_6.js"></script>
+</body>
+
+
+
+<i class=""></i>
+
+
+
+</html>
